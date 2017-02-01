@@ -1,3 +1,6 @@
+import tensorflow as tf
+import numpy as np
+
 # Concept:
 # A tensoflow variable is not only a value container,
 # it is also a structure that can be connected to
