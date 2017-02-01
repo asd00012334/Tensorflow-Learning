@@ -1,3 +1,12 @@
+import tensorflow as tf
+import numpy as np
+
+def addLayer(inputs, inSize, outSize, act=None):
+	weights=tf.Variable(tf.random_normal([inSize,outSize]))
+	biases=tf.Variable(tf.zeros([1,outSize])+0.1)
+	linearOut=tf.matmul(inputs,weights)+biases
+	if(act==None):
+		return linearOut
 	else:
 		return act(linearOut)
 
@@ -29,4 +38,4 @@ with tf.Session() as sess:
 	for step in xrange(0,301):
 		sess.run(train,feed_dict=dic)
 		if(step%30 is 0):
-			print(sess.run(Error,feed_dict=dic))
+print(sess.run(Error,feed_dict=dic))
